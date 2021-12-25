@@ -69,26 +69,98 @@ body{
     width: 1920px;
     height: 1005px;
     background: #061D0F;
+    overflow: hidden;
+    position: relative;
 }
 
-.start > h1{
+.start-content{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ellipse:nth-child(1){
+    position: absolute;
+    width: 936px;
+    height: 916px;
+    border-radius: 50%;
+    left: -123px;
+    top: -128px;
+    background: radial-gradient(32.2% 32.2% at 63.9% 56.6%, #D11010 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, #D2D2D2 0%, rgba(255, 255, 255, 0) 100%);
+    animation-name: ellipse-one;
+    animation-duration: 10s;
+    animation-direction: 1;
+    animation-fill-mode: forwards;
+}
+
+.ellipse:nth-child(2){
+    position: absolute;
+    width: 828px;
+    height: 810px;
+    border-radius: 50%;
+    left: 1112px;
+    top: -86px;
+    background: radial-gradient(56.58% 56.58% at 60.01% 43.42%, #9C09CF 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(52.27% 52.27% at 8.51% 47.73%, #FFE2A9 0%, rgba(255, 255, 255, 0) 100%);
+    animation-name: ellipse-two;
+    animation-duration: 10s;
+    animation-direction: 1;
+    animation-fill-mode: forwards;
+}
+
+.ellipse:nth-child(3){
+    position: absolute;
+    width: 853px;
+    height: 835px;
+    left: 495px;
+    top: 330px;
+    border-radius: 50%;
+    background: radial-gradient(46.33% 46.33% at 64.68% 53.67%, rgba(43, 174, 216, 0.9) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(63, 148, 11, 0.64) 0%, rgba(255, 255, 255, 0) 100%);
+    animation-name: ellipse-three;
+    animation-duration: 10s;
+    animation-direction: 1;
+    animation-fill-mode: forwards;
+}
+
+.blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: rgba(6, 29, 15, 0.6);
+    backdrop-filter: blur(150px);
+}
+
+.start-content > h1{
+    margin-top: 63px;
     text-align: center;
-    font-family: Roboto;
     font-style: normal;
     font-weight: 900;
     font-size: 220px;
     line-height: 150%;
     color: transparent;
     -webkit-text-stroke: 6px white;
+    text-shadow: #ffff 10px 0px 300px;
 }
 
-.start > p{
+.start-content > .person{
+    position: absolute;
+    left: 1195.74px;
+    top: 82px;
+}
+
+.start-content > p{
+    margin-top: -20px;
+    position: relative;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 67px;
     text-align: center;
     color: #EDEDED;
+    z-index: 4;
 }
 
 .buttons{
@@ -126,15 +198,18 @@ body{
 }
 
 .purus{
+    position: relative;
     width: 1237px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 119px;
-    
+    z-index: 3;
 }
 
 .purus-block{
+    display: flex;
+    align-items: center;
     width: 379px;
     height: 159px;
     background: rgba(116, 116, 116, 0.25);
@@ -147,14 +222,8 @@ body{
     float: left;
     width: 128px;
     height: 125px;
-    margin-top: 17px;
     margin-left: 25px;
-    margin-right: 30px;
-}
-
-.purus-block > div{
-    display: block;
-    margin-top: 25px;
+    margin-right: 30px; 
 }
 
 .purus-block > div > h1{
@@ -215,4 +284,44 @@ body{
     width: 1921px;
     height: 616px;
     background: black;
+}
+
+@keyframes ellipse-one {
+    0%{
+        left: -123px;
+        top: -128px;
+    }
+    100%{
+        left: 40px;
+        top: 398px;
+        transform: rotate(-70.01deg);
+    }
+}
+
+@keyframes ellipse-two {
+    0%{
+        width: 717px;
+        height: 684px;
+        left: 1112px;
+        top: -86px;
+    }
+    100%{
+        width: 699px;
+        height: 684px;
+        left: 557px;
+        top: -21px;
+        transform: rotate(113.67deg);
+    }
+}
+
+@keyframes ellipse-three {
+    0%{
+        left: 495px;
+        top: 330px;
+    }
+    100%{
+        left: 1183px;
+        top: 48px;
+        transform: rotate(109.27deg);
+    }
 }

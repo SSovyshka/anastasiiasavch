@@ -42,7 +42,6 @@ body{
     flex-direction: row;
     align-items: center;
     text-align: justify;
-    text-align-last: justify;
     justify-content: space-between;
     margin: 0 auto;
 }
@@ -53,7 +52,7 @@ body{
 
 .nav-menu {
     display: flex;
-    width: 1071px;
+    width: 956px;
     height: 100%;
     flex-direction: row;
     align-items: center;

@@ -28,6 +28,7 @@ body{
     margin: 0 auto;
 }
 
+
 .header{
     width: 1920px;
     height: 75px;
@@ -36,7 +37,7 @@ body{
 
 .menu{
     display: flex;
-    width: 1338px;
+    width: 1430px;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -64,6 +65,8 @@ body{
 
 .menu  > img{
     float: left;
+    width: 128px;
+    height: 75px;
 }
 
 .start{
@@ -76,9 +79,10 @@ body{
 
 .start-content{
     display: block;
-    position: absolute;
+    position: relative;
     z-index: 2;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -270,14 +274,11 @@ body{
 }
 
 .about-quiz{
+    display: flex;
+    align-items: center;
     width: 1920px;
     height: 540px;
     background: url(../images/background2.png);
-}
-
-.about-quiz{
-    display: flex;
-    align-items: center;
 }
 
 .about-quiz > div{
@@ -306,6 +307,7 @@ body{
 }
 
 .achievements{
+    position: relative;
     width: 1920px;
     height: 616px;
     background: black;
@@ -330,11 +332,24 @@ body{
 
 .achievements-item{
     display: flex;
+    position: relative;
     align-items: center;
     flex-direction: column;
     position: relative;
     width: 219px;
     height: 100%;
+    z-index: 2;
+}
+
+.achievements-item::after{
+    position: absolute;
+    width: 64%;
+    height: 12%;
+    border-radius: 50%;
+    content: "";
+    top: 170px;
+    z-index: -1;
+    box-shadow: 0 50px 24px rgba(255, 255, 255, 0.3);
 }
 
 .achievements-item > p{
@@ -426,6 +441,18 @@ body{
 .owl-theme .owl-nav{
     margin-top: 40px;
 }
+
+.owl-carousel .owl-nav button.owl-next:hover {
+   background: url("../images/right.png");
+   background-size: cover;
+}
+
+.owl-carousel .owl-nav button.owl-prev:hover{  
+    background: url("../images/right.png");
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
 
 .owl-carousel .owl-nav button.owl-next, button.owl-prev{
     width: 25px;
@@ -820,48 +847,211 @@ button.count-price{
     margin-top: 100px;
 }
 
-.portfolio-video{
+.portfolio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 1920px;
-    height: 589px;
+    height: 654px;
     background: black;
 }
 
-.video-text, .block-video{
-    display: block;
-    height: 100%;
-    width: 50%;
-    float: left;
-}
-
-.video-text{
+.portfolio-block{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 1434px;
+    height: 587.63px;
 }
 
-.video-text > .text{
-    display: block;
-    width: 680px;
-    height: 320px;
-    margin-left: 240px;
+.portfolio-text{
+    display: flex;
+    flex-direction: column;
+    width: 397px;
+
 }
 
-.text > h1{
+.portfolio-text > h1{
     font-family: 'Playfair Display', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
-    color: white;
+    line-height: 150%;
     text-transform: uppercase;
+    color: #FFFFFF;
 }
 
-.text > p{
+.portfolio-text > p{
+    margin-top: 17px;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
+    line-height: 150%;
     color: #CFCFCF;
-    margin-top: 30px;
-    margin-bottom: 80px;
 }
+
+.portfolio-text > button{
+    display: block;
+    margin-top: 60px;
+    text-transform: uppercase;
+    width: 268px;
+    height: 70px;
+    background: #CA0C2D;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: 0px;
+}
+
+.portfolio-video{
+    width: 957px;
+    height: 100%;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    width: 1920px;
+    height: 284px;
+    background: #162C1F;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 1427px;
+    height: 249px;
+}
+
+.job-info > img{
+    width: 196px;
+    height: 116px;
+}
+
+.worktime{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 324px;
+    height: 132px;
+}
+
+.time-e{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 53px;
+}
+
+.time-e-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time-e:nth-child(1){
+    width: 253px;
+}
+
+.time-e-text > h1{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: #F5F5F5;
+}
+
+.time-e-text > p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #C0C0C0;
+}
+
+.footer-menu > .nav-menu{
+    display: flex;
+    width: 251px;
+    height: 201px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 582px;
+    height: 204px;
+}
+
+.icons-links{
+    display: flex;
+    justify-content: space-between;
+    width: 517px;
+    height: 36px;
+}
+
+.links > h1{
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.input-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 582px;
+    height: 80px;
+    left: 1095px;
+    top: 165px;
+    background: #E3E3E3;
+    box-shadow: -4px -4px 13px rgba(112, 112, 112, 0.25), 6px 6px 12px rgba(57, 57, 57, 0.25), inset 4px 4px 12px rgba(64, 64, 64, 0.25);
+    border-radius: 3px;
+}
+
+.input-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 571px;
+    height: 69px;   
+}
+
+.input-center > input{
+    width: 100%;
+    border: none;
+    padding-left: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #7E7E7E;
+    box-shadow: inset -2px -2px 14px rgba(164, 164, 164, 0.25), inset 1px 1px 12px rgba(72, 72, 72, 0.25);
+    border-radius: 2px;
+}
+
+.input-center > button{
+    text-transform: uppercase;
+    width: 189px;
+    height: 70px;
+    background: #CA0C2D;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    
+}
+
+
 
 @keyframes ellipse-one {
     0%{
